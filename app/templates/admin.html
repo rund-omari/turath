@@ -1,0 +1,6 @@
+<!doctype html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>لوحة الطلبات</title><link rel="stylesheet" href="/static/style.css"></head>
+<body><header class="topbar"><div class="brand">لوحة إدارة الطلبات</div></header><main class="container"><section class="hero compact"><h1>الطلبات المستلمة</h1><p>الوصول لهذه الصفحة محمي باسم مستخدم وكلمة مرور.</p></section>
+<div class="table-wrap"><table><thead><tr><th>رقم الطلب</th><th>التاريخ</th><th>الاسم</th><th>العنصر</th><th>الملفات</th></tr></thead><tbody>
+{% for item in items %}<tr><td><strong>{{ item.id }}</strong></td><td>{{ item.data.get('submission_date','') }}</td><td>{{ item.data.get('applicant_name','—') }}</td><td>{{ item.data.get('element_name','—') }}</td><td><a href="/admin/files/{{ item.id }}/docx">Word</a>{% if item.pdf_path %} · <a href="/admin/files/{{ item.id }}/pdf">PDF</a>{% endif %}</td></tr>{% else %}<tr><td colspan="5">لا توجد طلبات بعد.</td></tr>{% endfor %}
+</tbody></table></div></main></body></html>

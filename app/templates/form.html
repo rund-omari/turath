@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ schema.title }}</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">وزارة الثقافة — نموذج إلكتروني</div>
+  </header>
+  <main class="container">
+    <section class="hero">
+      <div class="badge">خدمة إلكترونية مبسطة</div>
+      <h1>{{ schema.title }}</h1>
+      {% if schema.subtitle %}<p>{{ schema.subtitle }}</p>{% endif %}
+      <div class="notice">يمكن تعبئة النموذج من الهاتف أو الكمبيوتر. الحقول المعلّمة بنجمة (*) مطلوبة.</div>
+    </section>
+
+    <form method="post" action="/submit" enctype="multipart/form-data" class="form-card">
+      {% for section in schema.sections %}
+      <section class="section-block">
+        <div class="section-heading">
+          <span class="step">{{ loop.index }}</span>
+          <div>
+            <h2>{{ section.title }}</h2>
+            {% if section.description %}<p>{{ section.description }}</p>{% endif %}
+          </div>
+        </div>
+
+        <div class="grid">
+        {% for field in section.fields %}
+          <div class="field {% if field.type in ['textarea','file'] %}span-2{% endif %}">
+            <label for="{{ field.name }}">{{ field.label }}{% if field.required %}<span class="required"> *</span>{% endif %}</label>
+
+            {% if field.type == 'textarea' %}
+              <textarea id="{{ field.name }}" name="{{ field.name }}" rows="{{ field.rows or 5 }}" {% if field.required %}required{% endif %} placeholder="{{ field.placeholder or '' }}"></textarea>
+            {% elif field.type == 'select' %}
+              <select id="{{ field.name }}" name="{{ field.name }}" {% if field.required %}required{% endif %}>
+                <option value="">اختر...</option>
+                {% for option in field.options %}<option value="{{ option }}">{{ option }}</option>{% endfor %}
+              </select>
+            {% elif field.type == 'checkbox' %}
+              <div class="choices">
+                {% for option in field.options %}
+                <label class="choice"><input type="checkbox" name="{{ field.name }}" value="{{ option }}"> {{ option }}</label>
+                {% endfor %}
+              </div>
+            {% elif field.type == 'radio' %}
+              <div class="choices">
+                {% for option in field.options %}
+                <label class="choice"><input type="radio" name="{{ field.name }}" value="{{ option }}" {% if field.required %}required{% endif %}> {{ option }}</label>
+                {% endfor %}
+              </div>
+            {% elif field.type == 'file' %}
+              <div class="upload-box">
+                <input id="{{ field.name }}" type="file" name="{{ field.name }}" {% if field.multiple %}multiple{% endif %} {% if field.required %}required{% endif %}>
+                <small>يمكن اختيار أكثر من ملف عند الحاجة.</small>
+              </div>
+            {% else %}
+              <input id="{{ field.name }}" type="{{ field.type or 'text' }}" name="{{ field.name }}" {% if field.required %}required{% endif %} placeholder="{{ field.placeholder or '' }}" value="{{ field.default or '' }}" {% if field.readonly %}readonly{% endif %}>
+            {% endif %}
+          </div>
+        {% endfor %}
+        </div>
+      </section>
+      {% endfor %}
+
+      <div class="submit-area">
+        <p>بالضغط على «إرسال الاستمارة» سيتم إنشاء رقم طلب وحفظ نسخة من البيانات.</p>
+        <button type="submit">إرسال الاستمارة</button>
+      </div>
+    </form>
+  </main>
+</body>
+</html>

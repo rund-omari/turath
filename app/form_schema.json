@@ -1,0 +1,314 @@
+{
+  "title": "بطاقة حصر عناصر التراث الثقافي غير المادي",
+  "subtitle": "المشروع الوطني لحصر التراث الثقافي غير المادي في المحافظات — محافظة العاصمة عمّان",
+  "sections": [
+    {
+      "title": "بيانات جامع المادة",
+      "fields": [
+        {
+          "name": "researcher_name",
+          "label": "اسم الباحث",
+          "type": "text"
+        },
+        {
+          "name": "card_number",
+          "label": "رقم البطاقة",
+          "type": "text"
+        },
+        {
+          "name": "collection_date_place",
+          "label": "تاريخ ومكان جمع المعلومات",
+          "type": "text"
+        },
+        {
+          "name": "governorate",
+          "label": "المحافظة",
+          "type": "text",
+          "default": "عمان",
+          "readonly": true
+        }
+      ]
+    },
+    {
+      "title": "بيانات خاصة بالعنصر",
+      "fields": [
+        {
+          "name": "element_name",
+          "label": "اسم العنصر",
+          "type": "text",
+          "required": true
+        },
+        {
+          "name": "other_names",
+          "label": "مسميات أخرى للعنصر",
+          "type": "text"
+        },
+        {
+          "name": "classification",
+          "label": "تصنيف العنصر حسب الاتفاقية",
+          "type": "checkbox",
+          "options": [
+            "التقاليد وأشكال التعبير الشفهي، بما في ذلك اللغة.",
+            "فنون وتقاليد أداء العروض",
+            "الممارسات الاجتماعية والطقوس والاحتفالات.",
+            "المعارف والممارسات المتعلقة بالطبيعة والكون.",
+            "المهارات المرتبطة بالفنون الحرفية التقليدية."
+          ]
+        },
+        {
+          "name": "geographic_location",
+          "label": "الموقع الجغرافي للعنصر",
+          "type": "textarea",
+          "rows": 3
+        },
+        {
+          "name": "practicing_communities",
+          "label": "المجتمعات الممارسة للعنصر",
+          "type": "textarea",
+          "rows": 3
+        },
+        {
+          "name": "element_description",
+          "label": "وصف العنصر",
+          "type": "textarea",
+          "rows": 7
+        },
+        {
+          "name": "social_functions",
+          "label": "الوظائف الاجتماعية والمعاني الثقافية للعنصر",
+          "type": "textarea",
+          "rows": 6
+        },
+        {
+          "name": "practice_context",
+          "label": "السياق الذي يمارس فيه العنصر مثل: عمل / احتفالات وطقوس / ترفيه وسمر / عادات أسرية / غير ذلك",
+          "type": "textarea",
+          "rows": 4
+        },
+        {
+          "name": "transmission_formal",
+          "label": "طرق نقل العنصر بين أفراد المجتمع — 1. طرق رسمية (الحكومة)",
+          "type": "textarea",
+          "rows": 4
+        },
+        {
+          "name": "transmission_informal",
+          "label": "طرق نقل العنصر بين أفراد المجتمع — 2. طرق غير رسمية",
+          "type": "textarea",
+          "rows": 4
+        },
+        {
+          "name": "current_status",
+          "label": "حالة العنصر في الوقت الحاضر",
+          "type": "textarea",
+          "rows": 4
+        },
+        {
+          "name": "formal_safeguarding",
+          "label": "تدابير صون رسمية للعنصر",
+          "type": "textarea",
+          "rows": 5
+        },
+        {
+          "name": "informal_safeguarding",
+          "label": "تدابير صون غير رسمية من المجتمعات والجماعات والأفراد",
+          "type": "textarea",
+          "rows": 5
+        },
+        {
+          "name": "proposed_safeguarding",
+          "label": "تدابير صون مقترحة",
+          "type": "textarea",
+          "rows": 5
+        },
+        {
+          "name": "sdg_relation",
+          "label": "علاقة العنصر بأهداف التنمية المستدامة",
+          "type": "checkbox",
+          "options": [
+            "الأمن الغذائي",
+            "الرعاية الصحية",
+            "التعليم الجيد",
+            "المساواة بين الجنسين",
+            "التنمية الاقتصادية الشاملة",
+            "الاستدامة البيئية بما في ذلك تغير المناخ",
+            "السلام والتماسك الاجتماعي"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "الممارسون والمنظمات والأفراد المعنيون بالعنصر",
+      "description": "يمكن إدخال حتى أربعة ممارسين/جهات كما في الجدول المعتمد.",
+      "fields": [
+        {
+          "name": "practitioner_1_organization",
+          "label": "الممارس 1 — اسم الجهة",
+          "type": "text"
+        },
+        {
+          "name": "practitioner_1_person",
+          "label": "الممارس 1 — الشخص المسؤول",
+          "type": "text"
+        },
+        {
+          "name": "practitioner_1_phone",
+          "label": "الممارس 1 — رقم الهاتف",
+          "type": "tel"
+        },
+        {
+          "name": "practitioner_1_address",
+          "label": "الممارس 1 — العنوان",
+          "type": "text"
+        },
+        {
+          "name": "practitioner_1_email",
+          "label": "الممارس 1 — البريد الإلكتروني",
+          "type": "email"
+        },
+        {
+          "name": "practitioner_1_social",
+          "label": "الممارس 1 — وسائل التواصل الاجتماعي",
+          "type": "text"
+        },
+        {
+          "name": "practitioner_2_organization",
+          "label": "الممارس 2 — اسم الجهة",
+          "type": "text"
+        },
+        {
+          "name": "practitioner_2_person",
+          "label": "الممارس 2 — الشخص المسؤول",
+          "type": "text"
+        },
+        {
+          "name": "practitioner_2_phone",
+          "label": "الممارس 2 — رقم الهاتف",
+          "type": "tel"
+        },
+        {
+          "name": "practitioner_2_address",
+          "label": "الممارس 2 — العنوان",
+          "type": "text"
+        },
+        {
+          "name": "practitioner_2_email",
+          "label": "الممارس 2 — البريد الإلكتروني",
+          "type": "email"
+        },
+        {
+          "name": "practitioner_2_social",
+          "label": "الممارس 2 — وسائل التواصل الاجتماعي",
+          "type": "text"
+        },
+        {
+          "name": "practitioner_3_organization",
+          "label": "الممارس 3 — اسم الجهة",
+          "type": "text"
+        },
+        {
+          "name": "practitioner_3_person",
+          "label": "الممارس 3 — الشخص المسؤول",
+          "type": "text"
+        },
+        {
+          "name": "practitioner_3_phone",
+          "label": "الممارس 3 — رقم الهاتف",
+          "type": "tel"
+        },
+        {
+          "name": "practitioner_3_address",
+          "label": "الممارس 3 — العنوان",
+          "type": "text"
+        },
+        {
+          "name": "practitioner_3_email",
+          "label": "الممارس 3 — البريد الإلكتروني",
+          "type": "email"
+        },
+        {
+          "name": "practitioner_3_social",
+          "label": "الممارس 3 — وسائل التواصل الاجتماعي",
+          "type": "text"
+        },
+        {
+          "name": "practitioner_4_organization",
+          "label": "الممارس 4 — اسم الجهة",
+          "type": "text"
+        },
+        {
+          "name": "practitioner_4_person",
+          "label": "الممارس 4 — الشخص المسؤول",
+          "type": "text"
+        },
+        {
+          "name": "practitioner_4_phone",
+          "label": "الممارس 4 — رقم الهاتف",
+          "type": "tel"
+        },
+        {
+          "name": "practitioner_4_address",
+          "label": "الممارس 4 — العنوان",
+          "type": "text"
+        },
+        {
+          "name": "practitioner_4_email",
+          "label": "الممارس 4 — البريد الإلكتروني",
+          "type": "email"
+        },
+        {
+          "name": "practitioner_4_social",
+          "label": "الممارس 4 — وسائل التواصل الاجتماعي",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "title": "بيانات جهة الاتصال / الراوي",
+      "fields": [
+        {
+          "name": "narrator_name",
+          "label": "الاسم",
+          "type": "text"
+        },
+        {
+          "name": "narrator_role",
+          "label": "الصفة",
+          "type": "text"
+        },
+        {
+          "name": "narrator_gender",
+          "label": "الجنس",
+          "type": "text"
+        },
+        {
+          "name": "narrator_phone",
+          "label": "رقم الهاتف",
+          "type": "tel"
+        },
+        {
+          "name": "narrator_address",
+          "label": "العنوان",
+          "type": "text"
+        },
+        {
+          "name": "narrator_email",
+          "label": "البريد الإلكتروني",
+          "type": "email"
+        }
+      ]
+    },
+    {
+      "title": "الإرفاقات",
+      "description": "إرفاق صور فوتوغرافية للعنصر، ومقاطع فيديو إن توفر.",
+      "fields": [
+        {
+          "name": "attachments",
+          "label": "صور فوتوغرافية للعنصر / مقاطع فيديو إن توفر",
+          "type": "file",
+          "multiple": true
+        }
+      ]
+    }
+  ]
+}
